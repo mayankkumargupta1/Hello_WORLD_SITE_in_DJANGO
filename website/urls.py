@@ -5,10 +5,8 @@ from django.http import HttpResponse
 import os
 
 def home(request):
-    name = os.getenv('NAME')
-    user = os.getenv('USER')
-    host = os.getenv('HOST')
-    return HttpResponse(f'Hello World{name} {host} {user}')
+    name = os.getenv('DATABASE_URL')
+    return HttpResponse(f'Hello World{name}')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
